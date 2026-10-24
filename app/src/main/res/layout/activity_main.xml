@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_sci_fi_gradient"
+    tools:context=".MainActivity">
+
+    <!-- MAIN DASHBOARD CONTAINER (Initially hidden during splash screen) -->
+    <RelativeLayout
+        android:id="@+id/dashboardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!-- Top Right Header: Network Indicator and Sci-Fi Live TextClock -->
+        <LinearLayout
+            android:id="@+id/topBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="32dp">
+
+            <ImageView
+                android:id="@+id/ivNetworkStatus"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="@string/cd_network_status"
+                android:src="@drawable/ic_network_status"
+                app:tint="@color/net_disconnected" />
+
+            <TextClock
+                android:id="@+id/textClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm a | EEE, MMM d"
+                android:format24Hour="hh:mm a | EEE, MMM d"
+                android:letterSpacing="0.05"
+                android:textColor="@color/sci_fi_cyan"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Main Dashboard Content Split Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/topBar"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:paddingStart="48dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="48dp"
+            android:paddingBottom="48dp">
+
+            <!-- LEFT SIDE: Interactive Options -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAvInput"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/btn_sci_fi_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:letterSpacing="0.08"
+                    android:text="LIVE TV / AV INPUT"
+                    android:textColor="@color/sci_fi_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMiracast"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/btn_sci_fi_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:letterSpacing="0.08"
+                    android:text="ENGAGE MIRACAST"
+                    android:textColor="@color/sci_fi_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnWifi"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/btn_sci_fi_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:letterSpacing="0.08"
+                    android:text="NETWORK &amp; WI-FI"
+                    android:textColor="@color/sci_fi_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSettings"
+                    android:layout_width="320dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/btn_sci_fi_selector"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:letterSpacing="0.08"
+                    android:text="SYSTEM SETTINGS"
+                    android:textColor="@color/sci_fi_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@null" />
+            </LinearLayout>
+
+            <!-- RIGHT SIDE: Branding Header -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvAuthor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.15"
+                    android:text="@string/author_name"
+                    android:textColor="@color/sci_fi_cyan"
+                    android:textSize="38sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:letterSpacing="0.08"
+                    android:text="@string/company_name"
+                    android:textColor="@color/sci_fi_text_primary"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvWebsite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:letterSpacing="0.05"
+                    android:text="@string/website_url"
+                    android:textColor="@color/sci_fi_text_secondary"
+                    android:textSize="18sp" />
+
+                <!-- Accent Line -->
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/sci_fi_cyan_dim" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- FULLSCREEN SPLASH SCREEN OVERLAY -->
+    <RelativeLayout
+        android:id="@+id/splashOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_sci_fi_gradient"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSplashTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.12"
+                android:text="@string/company_name"
+                android:textColor="@color/sci_fi_cyan"
+                android:textSize="44sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSplashSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0.2"
+                android:text="@string/splash_subtitle"
+                android:textColor="@color/sci_fi_text_secondary"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

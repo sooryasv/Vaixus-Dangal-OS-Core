@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vaixus TV Launcher</string>
+    <string name="author_name">Soorya S V</string>
+    <string name="company_name">Vaixus Technologies</string>
+    <string name="website_url">www.Parinom.com</string>
+    <string name="btn_initialize_av_input">LIVE TV / AV INPUT</string>
+    <string name="btn_engage_miracast">ENGAGE MIRACAST</string>
+    <string name="splash_subtitle">VAIXUS TV LAUNCHER • INITIALIZING...</string>
+    <string name="cd_network_status">Network Status Indicator</string>
+</resources>
